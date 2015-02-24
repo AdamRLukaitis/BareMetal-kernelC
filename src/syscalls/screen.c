@@ -1,3 +1,9 @@
+void os_inc_cursor();
+void os_dec_cursor();
+void os_print_newline();
+void os_output();
+void os_scroll_screen();
+
 int os_Screen_Cursor_Col = 0;
 int os_Screen_Cursor_Row = 0;
 const int os_Screen_Cursor_Col_Max = 80;
