@@ -1,18 +1,18 @@
-void b_output(const char *str);
+/*
+ * BareMetal kernel in C
+ * Ian Seyler @ Return Infinity
+ * Copyright 2015
+ * Distributed under the terms of the BSD license
+ */
 
 void main()
 {
 	init_64();
-	b_output("Hello from C");
-	for (;;) {}	// Loop forever
-}
+//	init_pci();
+//	init_hdd();
+//	init_net();
 
-void b_output(const char *str)
-{
-	volatile char *videomem = (volatile char*)0xB8000;
-	while(*str != 0)
-	{
-		*videomem++ = *str++;
-		*videomem++ = 0x07;
-	}
+	b_output("Hello from C");
+
+	for (;;) {}	// Loop forever
 }

@@ -41,9 +41,14 @@ void os_print_newline()
 	
 }
 
-void os_output()
+void b_output(const char *str)
 {
-	
+	volatile char *videomem = (volatile char*)0xB8000;
+	while(*str != 0)
+	{
+		*videomem++ = *str++;
+		*videomem++ = 0x07;
+	}
 }
 
 void os_scroll_screen()
